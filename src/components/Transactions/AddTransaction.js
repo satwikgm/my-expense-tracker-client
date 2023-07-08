@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState , useEffect } from 'react'
+import './AddTransactions.css'
 
 const AddTransaction = () => {
 
@@ -59,27 +60,32 @@ const AddTransaction = () => {
     }
 
     return (
-        <div>
-            <div className='Balance'>
-                <h4>*********************************************</h4>
+        <div className='AddTransactions'>
+            <div style={{ color: 'black' ,  display: 'flex', justifyContent: 'center' }}>
+                {/* <h4>*********************************************</h4> */}
+                <br />
+                <br />
                 <h2>Your Balance</h2>
                 <h2>₹ {balance}</h2>
-                <h4>*********************************************</h4>
+                {/* <h4>*********************************************</h4> */}
+                <br />
             </div>
-            <form>
-                <label>Description</label>
-                <br />
-                <input type='text' placeholder='text' value={text} onChange={(e) => setText(e.target.value)}/>
-                <br />
-                <label>Amount</label>
-                <br />
-                <input type='number' placeholder='amount' value={amount} onChange={(e) => setAmount(e.target.value)}/>
-                <br /> <br />
-                <button type='button' onClick={addExpense}>Submit</button>
-            </form>
-            <h4>*********************************************</h4>
+            <div style={{display: 'flex', justifyContent: 'center' }}>
+                <form>
+                    <label>Description</label>
+                    <br />
+                    <input type='text' placeholder='text' value={text} onChange={(e) => setText(e.target.value)}/>
+                    <br />
+                    <label>Amount</label>
+                    <br />
+                    <input type='number' placeholder='amount' value={amount} onChange={(e) => setAmount(e.target.value)}/>
+                    <br /> <br />
+                    <button type='button' onClick={addExpense}>Submit</button>
+                </form>
+            </div>
+            <h4 style={{ color: 'red' ,  display: 'flex', justifyContent: 'center' }}>*****************************************************************************************************************************************************</h4>
             
-            <h3>History</h3>
+            <h3 style={{ color: 'blue' ,  display: 'flex', justifyContent: 'center' }}>History</h3>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <table>
                     <tbody>
